@@ -12,7 +12,7 @@ RATCHET is a Medical Transformer for Chest X-ray Diagnosis and Reporting. Based 
 
 ### Run the code
 
-Download pretrained weights and put in `./checkpoints` folder.
+1. Download pretrained weights, unzip them and put them in `./checkpoints` folder.
 
 - [ratchet_model_weights_202303111506.zip](http://www.doc.ic.ac.uk/~bh1511/ratchet_model_weights_202303111506.zip)
 <br> Size: `1.5G` <br> MD5: `26ab19cf18908841320205e192dabe9f` <br>
@@ -21,6 +21,8 @@ Download pretrained weights and put in `./checkpoints` folder.
 <br> Size: `695M` <br> MD5: `e028c1551419c059f62b1598e8ef92f3` <br>
 
 Start streamlit to run the webapp:
+
+2. Start streamlit to run the webapp:
 
 ```
 streamlit run web_demo.py
@@ -87,3 +89,7 @@ Each image in `inp_folder` would have a corresponding `.txt` report saved in `ou
 <p align="center">
   <img src="assets/examples.png" alt="More Captioning Examples" max-height="400"/>
 </p>
+
+### References
+
+> Hou, Benjamin, Georgios Kaissis, Ronald M. Summers, and Bernhard Kainz. "Ratchet: Medical transformer for chest x-ray diagnosis and reporting." In Medical Image Computing and Computer Assisted Intervention–MICCAI 2021: 24th International Conference, Strasbourg, France, September 27–October 1, 2021, Proceedings, Part VII 24, pp. 293-303. Springer International Publishing, 2021.  https://arxiv.org/abs/2107.02104 google-scholar: https://scholar.google.com/scholar?cites=6324608147072853701 
