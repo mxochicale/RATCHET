@@ -23,6 +23,12 @@ RATCHET is a Medical Transformer for Chest X-ray Diagnosis and Reporting. Based 
 streamlit run web_demo.py
 ```
 
+<p align="center">
+  <img src="assets/streamlit_run_web_demo.png" alt="web_demo.py" width="300"/>
+</p>
+
+
+
 ##### Environment: 
 ```
 Python 3.9.10
