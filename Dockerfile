@@ -1,10 +1,36 @@
-FROM python:3.7-slim-buster
-RUN pip install imageio==2.9.0 matplotlib numpy pandas scikit-image streamlit tokenizers tqdm tensorflow
-WORKDIR /code
-RUN cd /code
-RUN apt-get update && apt-get install -y git wget unzip nano
-RUN git clone https://github.com/farrell236/RATCHET.git
-RUN wget -q http://www.doc.ic.ac.uk/~bh1511/ratchet_model_weights_202303111506.zip
-RUN unzip -q ratchet_model_weights_202303111506.zip -d RATCHET/checkpoints
-WORKDIR /code/RATCHET
-RUN mkdir inp_folder out_folder
+FROM python:3.10.19-slim
+RUN pip install imageio matplotlib numpy==1.23.5 pandas scikit-image streamlit tokenizers tqdm tensorflow==2.11.0
+
+
+# Install system dependencies and clean up in single layer
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    git \
+    vim \
+    wget \
+    unzip \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+
+# Upgrade pip and install Python dependencies
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir \
+    imageio \
+    matplotlib \
+    numpy==1.23.5 \
+    pandas \
+    scikit-image \
+    streamlit \
+    tokenizers \
+    tqdm \
+    tensorflow==2.11.0
+
+
+# Create application directory and set working directory
+WORKDIR /RATCHET
+
+# Copy application code
+COPY . .
+
+# Create directories (use absolute paths)
+RUN mkdir -p /RATCHET/inp_folder /RATCHET/out_folder

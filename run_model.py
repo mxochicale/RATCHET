@@ -34,8 +34,8 @@ def load_model():
         dff=hparams['dff'],
         target_vocab_size=tokenizer.get_vocab_size(),
         dropout_rate=hparams['dropout_rate'])
-    transformer.load_weights('checkpoints/RATCHET2.tf')
-    print(f'Model Loaded! Checkpoint file: checkpoints/RATCHET2.tf')
+    transformer.load_weights('checkpoints/RATCHET.tf')
+    print(f'Model Loaded! Checkpoint file: checkpoints/RATCHET.tf')
 
     return transformer, tokenizer
 
@@ -142,7 +142,7 @@ if __name__ == '__main__':
         print(f'Generating Report for {os.path.basename(image)}')
 
         # Read input image with size [1, H, W, 1] and range (0, 255)
-        img_array = imageio.imread(image, as_gray=True)[None, ..., None]
+        img_array = imageio.v2.imread(image, mode='F')[None, ..., None]
 
         # Convert image to float values in (0, 1)
         img_array = tf.image.convert_image_dtype(img_array.astype('uint8'), tf.float32)

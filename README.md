@@ -33,6 +33,7 @@ Start streamlit to run the webapp:
 2. Start streamlit to run the webapp:
 
 ```bash
+source .venv/bin/activate
 streamlit run web_demo.py
 ```
 
@@ -46,21 +47,34 @@ streamlit run web_demo.py
 
 Build the docker container:
 
-```
-docker build -t ratchet ./Dockerfile
+```bash
+docker build -t ratchet -f Dockerfile .
 ```
 
 Run the docker image on CXR images:
 
-```
-docker run --user $(id -u):$(id -g) \
--v /path/to/image_input_folder:/code/RATCHET/inp_folder \
--v /path/to/report_output_folder:/code/RATCHET/out_folder:rw \
--i -t ratchet python run_model.py
+```bash
+docker run --name ratchet \
+--entrypoint bash -it --rm \
+--runtime=nvidia --gpus all \
+-v $HOME/datasets/ratchet/image_input_folder:/RATCHET/inp_folder \
+-v $HOME/datasets/ratchet/report_output_folder:/RATCHET/out_folder:rw \
+ratchet
+#-i -t ratchet 
+#python run_model.py
 ```
 
 Each image in `inp_folder` would have a corresponding `.txt` report saved in `out_folder`.
 
+Few docker commands
+```bash
+docker images && docker ps
+docker exec -it <container_id> bash
+docker exec -it $(docker container ls  | grep 'ID_NAME' | awk '{print $1}') bash
+docker stop $(docker ps -q)
+docker system prune -f --volumes
+docker rmi <ID>
+```
 
 ### Results
 
@@ -88,3 +102,5 @@ Each image in `inp_folder` would have a corresponding `.txt` report saved in `ou
 ### References
 
 > Hou, Benjamin, Georgios Kaissis, Ronald M. Summers, and Bernhard Kainz. "Ratchet: Medical transformer for chest x-ray diagnosis and reporting." In Medical Image Computing and Computer Assisted Intervention–MICCAI 2021: 24th International Conference, Strasbourg, France, September 27–October 1, 2021, Proceedings, Part VII 24, pp. 293-303. Springer International Publishing, 2021.  https://arxiv.org/abs/2107.02104 google-scholar: https://scholar.google.com/scholar?cites=6324608147072853701 
+
+> [Curated CXR report generation dataset](https://www.kaggle.com/datasets/financekim/curated-cxr-report-generation-dataset)
