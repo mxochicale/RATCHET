@@ -3,15 +3,15 @@ name = "ratchet"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = "==3.10"
 dependencies = [
     "imageio",
     "matplotlib",
-    "numpy==1.23.5", #Released: Nov 20, 2022
+    "numpy==1.23.5", #3.9/3.10 ==1.23.5", #Released: Nov 20, 2022
     "pandas",
     "scikit-image",
     "streamlit",
-    "tensorflow==2.11.0", #Released: Nov 18, 2022
-    "tokenizers==0.13.2", #Released: Nov 7, 2022
+    "tensorflow==2.11.0", #3.9/3.10 ==2.11.0", #Released: Nov 18, 2022
+    "tokenizers",
     "tqdm",
 ]

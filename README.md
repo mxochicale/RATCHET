@@ -16,8 +16,7 @@ See installation steps [here](dependencies)
 uv sync
 ```
 
-
-### Run the code
+### Download pretrained weights
 
 1. Download pretrained weights, unzip them and put them in `./checkpoints` folder.
 
@@ -26,6 +25,8 @@ uv sync
 
 - [ratchet_model_weights_202309022247.zip](http://www.doc.ic.ac.uk/~bh1511/ratchet_model_weights_202309022247.zip)
 <br> Size: `695M` <br> MD5: `e028c1551419c059f62b1598e8ef92f3` <br>
+
+### Run the code
 
 Start streamlit to run the webapp:
 
