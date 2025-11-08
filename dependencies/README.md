@@ -8,12 +8,10 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ## Create and acvivate venv
 ```
 cd ~/root path of the repo
-uv init --python 3.9
-uv venv .venv --python 3.9 # Create a virtual environment at .venv.
+uv init --python 3.10
+uv venv .venv --python 3.10 # Create a virtual environment at .venv.
 source .venv/bin/activate
-uv add imageio==2.26.0 matplotlib==3.7.1 numpy==1.23.5 pandas==1.5.3 scikit-image==0.20.0 streamlit==1.20.0 tensorflow==2.11.0 tokenizers==0.13.2 tqdm==4.64.1
-# This creates pyproject.toml and installs dependencies
-uv sync
+uv sync # This creates pyproject.toml and installs dependencies
 ```
 
 Errors

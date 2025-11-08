@@ -10,6 +10,13 @@ RATCHET is a Medical Transformer for Chest X-ray Diagnosis and Reporting. Based 
 </p>
 
 
+### Setup dependencies and environment
+See installation steps [here](dependencies)
+```bash
+uv sync
+```
+
+
 ### Run the code
 
 1. Download pretrained weights, unzip them and put them in `./checkpoints` folder.
@@ -32,13 +39,6 @@ streamlit run web_demo.py
   <img src="assets/streamlit_run_web_demo.png" alt="web_demo.py" width="300"/>
 </p>
 
-
-
-##### Environment
-See installation steps [here](dependencies)
-```bash
-uv sync
-```
 
 
 ### Docker Container
