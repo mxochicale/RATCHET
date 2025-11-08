@@ -1,2 +1,9 @@
 .idea
 model/__pycache__/
+*.venv
+*.swp
+
+
+#uv
+hello.py
+.python-version

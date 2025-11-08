@@ -1,21 +1,24 @@
 # Creating virtual environments
 
-## Install mamba
-Install [mamba](https://github.com/mxochicale/code/tree/main/mamba) 
-
-## Create virtual environment
-
-### all dependencies mamba env 
-* [ve.yml](ve.yml)
-
-
+## Install [uv](https://github.com/astral-sh/uv): "An extremely fast Python package manager".
 ```
-mamba env create -f ve.yml
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
+## Create and acvivate venv
+```
+cd ~/root path of the repo
+uv init --python 3.9
+uv venv .venv --python 3.9 # Create a virtual environment at .venv.
+source .venv/bin/activate
+uv add imageio==2.26.0 matplotlib==3.7.1 numpy==1.23.5 pandas==1.5.3 scikit-image==0.20.0 streamlit==1.20.0 tensorflow==2.11.0 tokenizers==0.13.2 tqdm==4.64.1
+# This creates pyproject.toml and installs dependencies
+uv sync
+```
 
-  Summary:
-  Install: 23 packages
-  Total download: 0 B
-
+Errors
+```
+#uv pip install imageio==2.37.2 matplotlib==3.10.7 numpy==2.3.4 pandas==2.3.3 scikit-image==0.25.2 streamlit==1.51.0 tensorflow==2.20.0 tokenizers==0.22.1 tqdm==4.67.1
+#ValueError: File format not supported: filepath=checkpoints/RATCHET.tf. Keras 3 only supports V3 `.keras` and `.weights.h5` files, or legacy V1/V2 `.h5` files.
 ```
 

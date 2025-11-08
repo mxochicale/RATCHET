@@ -24,7 +24,7 @@ Start streamlit to run the webapp:
 
 2. Start streamlit to run the webapp:
 
-```
+```bash
 streamlit run web_demo.py
 ```
 
@@ -34,22 +34,10 @@ streamlit run web_demo.py
 
 
 
-##### Environment: 
-```
-Python 3.9.10
-```
-
-##### Packages:
-```
-imageio                  2.26.0
-matplotlib               3.7.1
-numpy                    1.23.5
-pandas                   1.5.3
-scikit-image             0.20.0
-streamlit                1.20.0
-tensorflow               2.11.0
-tokenizers               0.13.2
-tqdm                     4.64.1
+##### Environment
+See installation steps [here](dependencies)
+```bash
+uv sync
 ```
 
 
