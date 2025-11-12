@@ -104,10 +104,19 @@ docker rmi --force <ID>
 
 <table>
   <tr>
-    <td><img src="assets/demo-web.gif" alt="web" width="320" /></td>
-    <td><img src="assets/demo-docker.gif" alt="docker" width="320" /></td>
+    <td align="center">
+      <img src="assets/demo-web.gif" alt="Streamlit demo" width="320" /><br />
+      <b>Streamlit demo</b><br />
+      Application interface running in the browser
+    </td>
+    <td align="center">
+      <img src="assets/demo-docker.gif" alt="Docker terminal demo" width="320" /><br />
+      <b>Docker run demo</b><br />
+      Terminal running Docker image executing a Python script for multiple files
+    </td>
   </tr>
 </table>
+
 
 ### References
 
