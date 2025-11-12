@@ -73,7 +73,7 @@ docker exec -it <container_id> bash
 docker exec -it $(docker container ls  | grep 'ID_NAME' | awk '{print $1}') bash
 docker stop $(docker ps -q)
 docker system prune -f --volumes
-docker rmi <ID>
+docker rmi --force <ID>
 ```
 
 ### Results
@@ -98,6 +98,16 @@ docker rmi <ID>
 <p align="center">
   <img src="assets/examples.png" alt="More Captioning Examples" max-height="400"/>
 </p>
+
+
+### Demos
+
+<table>
+  <tr>
+    <td><img src="assets/demo-web.gif" alt="web" width="320" /></td>
+    <td><img src="assets/demo-docker.gif" alt="docker" width="320" /></td>
+  </tr>
+</table>
 
 ### References
 
